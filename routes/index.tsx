@@ -1,31 +1,34 @@
 import { Head } from "$fresh/runtime.ts";
-import { useSignal } from "@preact/signals";
-import Counter from "../islands/Counter.tsx";
 
-export default function Home() {
-  const count = useSignal(3);
+export default function Index() {
   return (
     <>
       <Head>
-        <title>web-deno</title>
+        <title>Cytrix</title>
       </Head>
-      <div class="px-4 py-8 mx-auto bg-[#86efac]">
-        <div class="max-w-screen-md mx-auto flex flex-col items-center justify-center">
-          <img
-            class="my-6"
-            src="/logo.svg"
-            width="128"
-            height="128"
-            alt="the fresh logo: a sliced lemon dripping with juice"
-          />
-          <h1 class="text-4xl font-bold">Welcome to fresh</h1>
-          <p class="my-4">
-            Try updating this message in the
-            <code class="mx-2">./routes/index.tsx</code> file, and refresh.
+      <main class="w-screen h-screen flex justify-center items-center">
+        <div>
+          <img src="/icon.webp" class="rounded-full w-28 h-28 mx-auto" />
+          <hr class="border-none h-4" />
+          <h1 class="font-bold text-4xl text-center">Cytrix</h1>
+          <hr class="border-none h-4" />
+          <p class="text-center text-xl">
+            A multiplayer touchscreen circle game.
           </p>
-          <Counter count={count} />
+          <hr class="border-none h-4" />
+          <div class="flex items-center justify-between gap-x-2">
+            <a
+              href="/signup"
+              class="w-3/4 bg-zinc-600 text-white py-2 font-medium hover:brightness-110 active:brightness-90 transition rounded-sm flex justify-center"
+            >
+              Sign Up
+            </a>
+            <a href="/signin" class="hover:underline">
+              Sign In
+            </a>
+          </div>
         </div>
-      </div>
+      </main>
     </>
   );
 }
