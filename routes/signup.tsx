@@ -1,13 +1,12 @@
-import { Head } from "$fresh/runtime.ts";
 import { Handlers, PageProps } from "$fresh/server.ts";
 import SignupForm from "../islands/SignupForm.tsx";
 
 export default function SignUp() {
   return (
     <>
-      <Head>
+      <head>
         <title>Sign Up</title>
-      </Head>
+      </head>
       <main class="flex h-screen">
         <div class="w-1/3 bg-white h-full hidden lg:block"></div>
         <div class="w-full bg-white h-full p-8 flex flex-col justify-center">

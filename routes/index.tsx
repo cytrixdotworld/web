@@ -1,11 +1,9 @@
-import { Head } from "$fresh/runtime.ts";
-
 export default function Index() {
   return (
     <>
-      <Head>
+      <head>
         <title>Cytrix</title>
-      </Head>
+      </head>
       <main class="w-screen h-screen flex justify-center items-center">
         <div>
           <img src="/icon.webp" class="rounded-full w-28 h-28 mx-auto" />
