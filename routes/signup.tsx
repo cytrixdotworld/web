@@ -1,10 +1,8 @@
 import { Head } from "$fresh/runtime.ts";
-import { useId } from "preact/hooks";
+import { Handlers, PageProps } from "$fresh/server.ts";
+import SignupForm from "../islands/SignupForm.tsx";
 
 export default function SignUp() {
-  const usernameId = useId();
-  const displayNameId = useId();
-
   return (
     <>
       <Head>
@@ -15,40 +13,7 @@ export default function SignUp() {
         <div class="w-full bg-white h-full p-8 flex flex-col justify-center">
           <h1 class="font-medium text-3xl">Sign Up</h1>
           <hr class="mt-4 mb-8 max-w-md" />
-          <form class="flex flex-col gap-y-4 max-w-sm" // onSubmit={webAuthnFlow}
-          >
-            <div>
-              <label
-                htmlFor={usernameId}
-                class="after:content-['*'] after:text-red-500 after:ml-0.5"
-              >
-                Username
-              </label>
-              <input
-                id={usernameId}
-                class="block w-full border px-4 py-2 rounded-lg hover:border-zinc-600 transition-colors"
-                required
-                name="username"
-                autoComplete="username webauthn"
-              />
-            </div>
-            <div>
-              <label htmlFor={displayNameId}>Display Name</label>
-              <input
-                id={displayNameId}
-                class="block w-full border px-4 py-2 rounded-lg hover:border-zinc-600 transition-colors"
-                name="displayName"
-              />
-            </div>
-            <button class="w-full max-w-sm bg-zinc-600 text-white rounded-md py-2 hover:brightness-110 active:brightness-90 transition">
-              Continue with <span class="font-medium">WebAuthn</span>
-            </button>
-            {
-              /* <button class="w-full max-w-sm bg-blue-500 text-white rounded-md py-2">
-              Continue with Google
-            </button> */
-            }
-          </form>
+          <SignupForm challenge={{} as any} />
           <hr class="my-8 max-w-md" />
           <div class="flex gap-x-4 text-sm">
             <a class="hover:underline" href="#">
