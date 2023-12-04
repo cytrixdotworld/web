@@ -1,5 +1,4 @@
-import { Handlers, PageProps } from "$fresh/server.ts";
-import SignupForm from "../islands/SignupForm.tsx";
+import SignInForm from "./(_islands)/SignInForm.tsx";
 
 export default function SignUp() {
   return (
@@ -7,14 +6,11 @@ export default function SignUp() {
       <head>
         <title>Sign Up</title>
       </head>
-      <main class="flex h-screen">
-        <div class="w-1/3 bg-white h-full hidden lg:block"></div>
-        <div class="w-full bg-white h-full p-8 flex flex-col justify-center">
-          <h1 class="font-medium text-3xl">Sign Up</h1>
-          <hr class="mt-4 mb-8 max-w-md" />
-          <SignupForm challenge={{} as any} />
-          <hr class="my-8 max-w-md" />
-          <div class="flex gap-x-4 text-sm">
+      <main class="flex h-screen text-baseline-light-on-surface">
+        <div class="w-full bg-white h-full p-8 flex gap-y-4 flex-col justify-center">
+          <h1 class="font-medium text-3xl font-display text-center">Sign In</h1>
+          <SignInForm />
+          <div class="flex gap-x-4 text-sm mx-auto">
             <a class="hover:underline" href="#">
               Support
             </a>
